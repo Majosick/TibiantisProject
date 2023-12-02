@@ -3,7 +3,7 @@ import random
 import time
 import pyautogui
 from time import sleep
-
+from datetime import datetime
 import win32api
 import win32con
 from pywin.framework import app
@@ -297,22 +297,25 @@ class game:
                 tibiantis = gw.getWindowsWithTitle("Tibiantis")[0]
                 tibiantis.activate()
                 time.sleep(2)
+                c = datetime.now()
+                current_time = c.strftime('%H_%M_%S')
                 myScreenshot = pyautogui.screenshot()
-                myScreenshot.save('lol.png')
+                time.sleep(5)
+                myScreenshot.save(current_time + 'lol.png')
             except Exception as e:
                 time.sleep(2)
                 #win_activate(window_title="Tibiantis", partial_match=True)
-                tibiantis = gw.getWindowsWithTitle("Tibiantis")[0]
+                #tibiantis = gw.getWindowsWithTitle("Tibiantis")[0]
                 # tibiantis.restore()
                 # tibiantis.minimize()
                 # tibiantis.maximize()
                 # tibiantis.
                 #tibiantis.show()
-                tibiantis.activate()
-                time.sleep(2)
-                myScreenshot = pyautogui.screenshot()
-                myScreenshot.save('lol.png')
-                return 0
+                # tibiantis.activate()
+                # time.sleep(2)
+                # myScreenshot = pyautogui.screenshot()
+                # myScreenshot.save('lol.png')
+            # return 0
 
     def totoLoto(self, fro, to):
         return random.randint(fro, to)
