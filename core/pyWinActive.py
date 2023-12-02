@@ -19,9 +19,10 @@ def win_activate(window_title, partial_match=False):
             raise Exception('Could not find window matching title')
 
     handle = win32gui.FindWindow(0, window_title)
-    win32gui.ShowWindow(handle, win32con.SW_MINIMIZE)
+    # win32gui.ShowWindow(handle, win32con.SW_MINIMIZE)
     win32gui.ShowWindow(handle, True)
     win32gui.SetForegroundWindow(handle)
+    win32gui.ShowWindow(handle, win32con.SW_MAXIMIZE)
 
 
 def window_enum_handler(hwnd, resultList):

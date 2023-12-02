@@ -12,7 +12,7 @@ bot = True
 running = False
 status_eatfood = False
 status_treiner = False
-status_walking = False
+status_walking = True
 status_alerts = False
 status_healer = False
 status_runemaker = False
@@ -54,7 +54,7 @@ lt.start()
 def focus():
     # FOCUS GAME
     w = winapi.WinApi()
-    w.find_window_wildcard(".*Realesta.*")
+    w.find_window_wildcard(".*Tibiantis.*")
     w.set_foreground()
 
 def start():
@@ -69,7 +69,8 @@ def menu():
     print("SHIFT + END WILL CLOSE THE BOT")
 
 
-    choice = input("Choice: ")
+    #choice = input("Choice: ")
+    choice = "6"
 
     if choice == "1":
         global status_fishing
@@ -154,7 +155,7 @@ while bot:
         if(status_eatfood):
             core.game.eat_food(core.game)
         if(status_walking):
-            core.game.walk()
+            core.game.makeStuff(core.game)
     else:
         menu()
     sleep(1)
