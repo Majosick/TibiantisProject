@@ -293,7 +293,12 @@ class game:
                 #sleep(10)
                 # self.dragRune(self)
                 # self.dragRune(self)
-                self.eatMeat(self)
+                #self.eatMeat(self)
+                tibiantis = gw.getWindowsWithTitle("Tibiantis")[0]
+                tibiantis.activate()
+                time.sleep(2)
+                myScreenshot = pyautogui.screenshot()
+                myScreenshot.save('lol.png')
             except Exception as e:
                 time.sleep(2)
                 #win_activate(window_title="Tibiantis", partial_match=True)
