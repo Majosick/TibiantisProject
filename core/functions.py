@@ -291,8 +291,8 @@ class game:
             #sleep(14 * 60 + self.totoLoto(self, 1, 20))
             try:
                 #sleep(10)
-                # self.dragRune(self)
-                # self.dragRune(self)
+                self.dragRune(self)
+                self.dragRune(self)
                 self.eatMeat(self)
             except Exception as e:
                 time.sleep(2)
@@ -305,8 +305,8 @@ class game:
                 #tibiantis.show()
                 tibiantis.activate()
                 time.sleep(2)
-                myScreenshot = pyautogui.screenshot()
-                myScreenshot.save('lol.png')
+                #myScreenshot = pyautogui.screenshot()
+                #myScreenshot.save('lol.png')
                 return 0
 
     def totoLoto(self, fro, to):
