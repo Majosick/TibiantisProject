@@ -288,22 +288,22 @@ class game:
     def makeStuff(self):
         while True:
             # spij 14 minut + od 1 do 30 sekund
-            #sleep(14 * 60 + self.totoLoto(self, 1, 20))
+            sleep(14 * 60 + self.totoLoto(self, 1, 20))
             try:
                 #sleep(10)
                 self.dragRune(self)
                 self.dragRune(self)
                 self.eatMeat(self)
             except Exception as e:
-                time.sleep(2)
+                #time.sleep(2)
                 #win_activate(window_title="Tibiantis", partial_match=True)
                 tibiantis = gw.getWindowsWithTitle("Tibiantis")[0]
                 # tibiantis.restore()
-                # tibiantis.minimize()
-                # tibiantis.maximize()
+                tibiantis.minimize()
+                tibiantis.maximize()
                 # tibiantis.
                 #tibiantis.show()
-                tibiantis.activate()
+                #tibiantis.activate()
                 time.sleep(2)
                 #myScreenshot = pyautogui.screenshot()
                 #myScreenshot.save('lol.png')
@@ -316,13 +316,11 @@ class game:
         blank = pyautogui.locateOnScreen("blank.png", grayscale=False, confidence=.99)
         leftHand = pyautogui.locateOnScreen("leftHand.png", grayscale=False, confidence=.9)
         pyautogui.moveTo(blank.left, blank.top)
-        sleep(self.totoLoto(self, 1, 4))
         pyautogui.dragTo(leftHand.left, leftHand.top, button='left', duration=0.8)
-        sleep(self.totoLoto(self, 1, 4))
+        sleep(self.totoLoto(self, 1, 3))
         pyautogui.hotkey("f10")
-        sleep(self.totoLoto(self, 1, 4))
-        pyautogui.dragTo(blank.left, blank.top, button='left', duration=0.8)
         sleep(self.totoLoto(self, 1, 2))
+        pyautogui.dragTo(blank.left, blank.top, button='left', duration=0.8)
 
     def eatMeat(self):
         meat = pyautogui.locateOnScreen("ham.png", grayscale=False, confidence=.75)
