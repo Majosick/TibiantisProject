@@ -295,7 +295,8 @@ class game:
                 # self.dragRune(self)
                 #self.eatMeat(self)
                 tibiantis = gw.getWindowsWithTitle("Tibiantis")[0]
-                tibiantis.activate()
+                tibiantis.minimize()
+                tibiantis.maximize()
                 time.sleep(2)
                 c = datetime.now()
                 current_time = c.strftime('%H_%M_%S')
