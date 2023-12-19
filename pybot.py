@@ -6,9 +6,10 @@ from tkinter import *
 import task as task
 from pynput import keyboard
 from time import sleep
-from core import winapi
+from core import winapi, functions
 from core import functions as core
-
+import datetime
+from datetime import timedelta
 
 bot = True
 running = False
@@ -147,6 +148,17 @@ for i in image_list:
         sys.exit(0)
 
 # runki.start()
+global now
+now = datetime.datetime.now()
+def hasTimePassed(before):
+    someTime = 12 * 60 + core.game.totoLoto(core.game, 1, 20)
+    #someTime = 10 debug purposes
+    nowCheck = datetime.datetime.now()
+    if(before + timedelta(seconds=someTime) < nowCheck):
+        return True
+    else:
+        return False
+
 
 while bot:
     if running:
@@ -161,8 +173,9 @@ while bot:
             core.game.mp(core.game, 10, "exura infir", 1)
         if(status_eatfood):
             core.game.eat_food(core.game)
-        if(status_walking):
+        if(hasTimePassed(now)):
             core.game.makeStuff(core.game)
+            now = datetime.datetime.now()
     else:
         menu()
     sleep(1)

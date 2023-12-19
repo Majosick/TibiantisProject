@@ -286,28 +286,28 @@ class game:
             return 0
 
     def makeStuff(self):
-        while True:
-            # spij 14 minut + od 1 do 30 sekund
-            sleep(12 * 60 + self.totoLoto(self, 1, 20))
-            try:
-                #sleep(10)
-                self.dragRune(self)
-                # self.dragRune(self)
-                self.eatMeat(self)
-            except Exception as e:
-                #time.sleep(2)
-                #win_activate(window_title="Tibiantis", partial_match=True)
-                tibiantis = gw.getWindowsWithTitle("Tibiantis")[0]
-                # tibiantis.restore()
-                tibiantis.minimize()
-                tibiantis.maximize()
-                # tibiantis.
-                #tibiantis.show()
-                #tibiantis.activate()
-                time.sleep(2)
-                #myScreenshot = pyautogui.screenshot()
-                #myScreenshot.save('lol.png')
-                return 0
+#        while True:
+        # spij 14 minut + od 1 do 30 sekund
+        #sleep(12 * 60 + self.totoLoto(self, 1, 20))
+        try:
+            #sleep(10)
+            self.dragRune(self)
+            # self.dragRune(self)
+            self.eatMeat(self)
+        except Exception as e:
+            #time.sleep(2)
+            #win_activate(window_title="Tibiantis", partial_match=True)
+            tibiantis = gw.getWindowsWithTitle("Tibiantis")[0]
+            # tibiantis.restore()
+            tibiantis.minimize()
+            tibiantis.maximize()
+            # tibiantis.
+            #tibiantis.show()
+            #tibiantis.activate()
+            time.sleep(2)
+            #myScreenshot = pyautogui.screenshot()
+            #myScreenshot.save('lol.png')
+            return 0
 
     def totoLoto(self, fro, to):
         return random.randint(fro, to)
@@ -425,3 +425,4 @@ class game:
             self.useOnLocation(self, loc.left, loc.top, "fishing")
         except:
             Exception("Fishing")
+
