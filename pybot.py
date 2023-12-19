@@ -2,6 +2,8 @@ import os
 import time
 from threading import Thread
 from tkinter import *
+
+import task as task
 from pynput import keyboard
 from time import sleep
 from core import winapi
@@ -41,6 +43,9 @@ def on_press(key):
 def on_release(key):
     pass
 
+def tasky():
+    core.game.makeStuff(core.game)
+
 def listen():
     with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
         listener.join()
@@ -49,6 +54,8 @@ threads = list()
 lt = Thread(target=listen)
 threads.append(lt)
 lt.start()
+# runki = Thread(target=tasky)
+# runki.start()
 
 
 def focus():
@@ -139,7 +146,7 @@ for i in image_list:
         wait = input("Press any key to quit.")
         sys.exit(0)
 
-
+# runki.start()
 
 while bot:
     if running:

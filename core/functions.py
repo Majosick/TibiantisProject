@@ -288,11 +288,11 @@ class game:
     def makeStuff(self):
         while True:
             # spij 14 minut + od 1 do 30 sekund
-            sleep(14 * 60 + self.totoLoto(self, 1, 20))
+            sleep(12 * 60 + self.totoLoto(self, 1, 20))
             try:
                 #sleep(10)
                 self.dragRune(self)
-                self.dragRune(self)
+                # self.dragRune(self)
                 self.eatMeat(self)
             except Exception as e:
                 #time.sleep(2)
@@ -318,7 +318,7 @@ class game:
         pyautogui.moveTo(blank.left, blank.top)
         pyautogui.dragTo(leftHand.left, leftHand.top, button='left', duration=0.8)
         sleep(self.totoLoto(self, 1, 3))
-        pyautogui.hotkey("f10")
+        pyautogui.hotkey("f7")
         sleep(self.totoLoto(self, 1, 2))
         pyautogui.dragTo(blank.left, blank.top, button='left', duration=0.8)
 
